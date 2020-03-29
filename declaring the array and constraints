@@ -1,0 +1,22 @@
+#include<unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<pthread.h>
+#include<sys/wait.h>
+
+#define MIN_PID 100
+#define MAX_PID 1000
+#define SIZE MAX_PID-MIN_PID
+
+int NO;
+int arr[SIZE];                       //Declaring arr
+// initially assigning 0
+int allot()
+{
+ int k;
+ for(k=0;k<SIZE;k++)                 // for loop
+ {
+  arr[k]=0;          //Mark all as available in the arr
+ }
+}
