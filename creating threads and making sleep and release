@@ -1,0 +1,17 @@
+if(id<0)
+{
+printf("pids are not avaliable");
+}
+else
+{
+printf("Thread [%3d] PID [%3d] assigned\n",tid,id+MIN_PID);
+        // to sleep for a random time between 1-10 seconds
+        int r=1+rand()%30;
+        sleep(r);
+
+printf("Thread [%3d] PID [%3d] Released after %d sec\n",tid,id+MIN_PID,r);
+        release(id);
+    }
+pthread_exit(NULL);
+}
+
