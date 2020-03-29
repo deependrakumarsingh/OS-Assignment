@@ -1,0 +1,26 @@
+int main()
+{
+printf("Enter no of processes: ");
+scanf("%d",&NO);
+if(NO<1)
+{
+printf("invalid input");
+}
+else
+{
+	int i;
+	allot();
+	pthread_t pro[NO];
+	srand(time(NULL));
+	for(i=0;i<NO;i++)
+	{
+	if(pthread_create(&pro[i],NULL,thread_fun,(void*)&i))
+	            return -1*printf("error\n");
+	}
+	for(i=0; i<NO; i++)
+	pthread_join(pro[i],NULL);
+	
+	return 0*printf("\nSuccesful\n");
+}
+}
+
