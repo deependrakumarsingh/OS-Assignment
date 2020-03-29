@@ -1,0 +1,22 @@
+int assign(void)
+{
+  int i,flag=1;
+  for(i=0;i<SIZE;i++)               // for loop
+  {
+   if(arr[i]==0)
+   {
+    arr[i]=1;
+    flag=0;
+    break;
+   }
+  }
+  return flag?-1:i;          // Ternary Operator
+}
+void release(int j)
+{
+arr[j]=0;
+}
+void *thread_fun(void *a)
+{
+int tid=*((int*)a);
+int id=assign();
